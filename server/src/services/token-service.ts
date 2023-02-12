@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import { User } from './types';
+import { User } from '../types';
 
 const accessTokenSalt = 'very-secret-salt';
 const tokenExpiresIn = '1h';

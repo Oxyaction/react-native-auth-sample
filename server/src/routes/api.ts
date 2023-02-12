@@ -1,11 +1,9 @@
-import Router from '@koa/router';
-import { AuthenticateInput, User } from './types';
-import { generateAccessToken } from './token-service';
-import { accessMiddleware } from './access-middleware';
+import Router from 'koa-router';
+import { AuthenticateInput, User } from '../types';
+import { generateAccessToken } from '../services/token-service';
+import { accessMiddleware } from '../access-middleware';
 
-export const router = new Router({
-  prefix: '/api',
-});
+export const router = new Router();
 
 const bankingAccounts = [{
   userId: 'test-user-id',
@@ -18,6 +16,7 @@ const users: User[] = [{
   id: 'test-user-id',
   email: 'test-user@gmail.com',
   password: 'test-password',
+  createdAt: new Date(),
 }];
 
 router.post('/authenticate', async(ctx) => {

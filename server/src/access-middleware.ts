@@ -1,4 +1,4 @@
-import { verifyAccessToken } from './token-service';
+import { verifyAccessToken } from './services/token-service';
 
 export async function accessMiddleware(ctx, next) {
   const { authorization } = ctx.request.headers;
